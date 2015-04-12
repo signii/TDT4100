@@ -1,0 +1,68 @@
+Chapter 2: Introduction to Objects and Classes
+Identify objects, methods, and classes
+	• Objects are entities in your program that you manipulate by calling methods
+	• A method is a sequence of instructions that access the data of an object
+	• A class decsribes a set of objects with the same behavior
+
+Write variable declarations and assignments
+	• A variable is a storage location with a name
+	• When declaring a variable, you usually specify an initial value
+	• When declaring a variable, you also specify the type of its values
+	• Use the int type for numbers that cannot have a fractional part
+	• Use the double type for floating-point numbers
+	• Numbers can be combined by erithmetic operators such as +, - and *
+	• By convention, variable names should start with a lowercase letter
+	• Use comments to add explanations for humans who read your code. The compiler ignores comments.
+	• Use the assignment operator (=) to change the value of a variable
+	• All variables must be initialized before you access them
+	• The assignment operator = does not denote mathematical equality
+
+Construct objects and invoke methods on them
+	• Use the new operator, followed by a class name and arguments, to construct new objects
+	• An accessor method does not change the internal data of the object on which it it invoked. A mutor method changes the data
+
+Use the API documentation for finding method descriptions and packages
+	• The API (Application Programming Interface) documentation lists the classes and methods of the Java library
+	• Java classes are grouped into packages. Use the import statement to use classes that are declared in other packages
+
+Understand instance variables and the methods that access them
+	• An object's instance variables store the data required for executing its methods
+	• Each object of class has its own set of instance variables
+	• Private instance variables can only be accessed by methods of the same class
+	• Encapsulation is the process of hiding implementation details and providing methods for data access
+	• Encapsulation allows a programmer to use a class without having to know its implementation
+	• Information hiding makes it simpler for the implementor of a class to locate errors and change implementations
+
+Write methid and constructor headers that describe the public interface of a class
+	• In order to implement a class, you first need to know which methds are required
+	• Constructors set the initial data for objects
+	• The constructor name is always the same as the class name
+	• Use documentation comments to describe the classes and public methods of your programs
+	• Provide documentation comments for every class, every methid, every parameter variable, and every return value
+
+Implement a class
+	• The private implementation of a class consists of instance variables, and the bodies of constructors and methods
+
+Write tests that verify that a class works correctly
+	• A unit test verifies that a class works correctly in isolation, outside a complete program
+	• To test a class, use an environment for interactive testing, or write a tester class to execute test instructions
+
+Describe how multiple object references can refer to the same object
+	• An object reference describes the location of an object
+	• Multiple object variables can contain references to the same object
+	• Number variables store numbers. Object variables store references.
+	• Use of an instance variable name in a mathod denotes the instance variable of the implicit parameter
+	• The this reference denotes the implicit parameter
+	• A local variable shadows an instance variable with the same name. You can access the instance variable name through the this reference
+	• A method call without an implicit parameter is applied to the same object
+
+Write programs that display frame windows
+	• To show a frame, construct a Jframe object, set its size, and make it visible
+	• In order to display a drawing in a frame, declare a class that extends the Jcomponent class
+	• Place drawing instructions inside the paintComponent methid. That methid is called whenever the component needs to be repainted
+	• Use a cast to recover the Graphics2D object from the Graphics argument of the paintComponent method
+	• The Ellipse2D.Double and Line2D.Dpuble classes describe graphical shapes
+	• The drawString method draws a string, starting at its basepoint
+	• When you set a new color in the graphics context, it is used for subsequent drawing operations
+	• It is a good idea to make a class for any part of a drawing that can occur more than once
+	• To figure out how to draw a complex shape, make a sketch on graph paper
