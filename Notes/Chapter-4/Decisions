@@ -1,0 +1,74 @@
+4.1 The if Statement
+	• The if statement allows a program to carry out different actions depending in the nature of the data to be processed
+		○ When a condtiton is fulfilled, one set of statements is executed. Otherwise, another set of statements is executed
+
+4.2 Comparing Values
+	• Every if statement contains a condition. In many cases, the condition involves comparing two values
+		○ Use relational operators to compare numbers
+			§ <	<=	Ø 	>=	==	!=
+	• A relational operator tests the relationship between two values
+
+	Relational operators
+	Java	Math Notation	Description
+	>	>	Greater than
+	>=	>=	Greater than or equal
+	<	<	Less than
+	<=	<=	Less than or equal
+	==	=	Equal
+	!=	!=	Not equal
+	
+	• You must remember to use == inside tests and to use = outside tests
+	• When comparing floating-point numbers, don't test for equality. Instead, check wheter they are close enough
+	• To test whether two strings are equal to each other, you must use the methid called equals:
+		If (string1.equals(string2))...
+		○ Do not use the == operator to compare strings. Use the equals method instead
+	• If two strings are not identical, you still may want to know the relationship between them
+		○ The compareTo method compares strings in lexicographic order
+			String1.compareTo(string2) < 0
+	• There are a few technical differences between the ordering in a dictionary and the lexiographic ordering in Java
+		○ All uppercase letters come before the lowercase letters. 
+		○ The space character comes before all printable characters
+		○ Numbers come before letters
+	• The == operator tests whether two object references are identical. To compare the contents of objects, you need to use the equals method
+	• The null reference refers to no object
+		○ An object reference can have the special value null if it refers to no object at all
+		○ Note that the null reference is not the same as the empty string ""
+			§ The empty string is a valid string of length 0, whereas a null indicates that a string variable refers to no string at all
+
+4.3 Multiple Alternatives
+	• Multiple if statements can be combined to evaluate complex decisions
+		○ If -> else if -> else
+	• When using multiple if statements, test general conditions after more specific conditions
+
+4.4 Nested Branches
+	• It is often necessary to include an if statement inside another. Such arrangement is called a nested set of statements
+		○ When a decision statement is contained inside the branch of another decision statement, the statements are nested
+	• Nested decisions are required for problems that have two levels of decision making
+
+4.5 Problem Solving: Flowcharts
+	• Flow charts are made up of elements for tasks, input/output, and decisions
+	• each branch of a decision can contain tasks and further decisions
+	• Never point an arrow inside another branch
+
+4.6 Problem Solving: Selecting Test Cases
+	• Testing the functionalit of a program without consideration of its internal structure is called black-box testing
+		○ If a program works perfectly on all inputs, then it surely does its job
+		○ Black-box testing describes a testing method that does not take the structure of the implementation into account
+	• White-box testing uses information about the structure of a program
+	• Code coverage is a measure of how many parts of a program have been tested
+		○ If some code is never executed by any of your test cases, you have no way of knowing whether that code would perform correctly if it ever were executed by user input
+	• When you select test cases, you should make it a habit to include boundary test cases: legal values that lie at the boundary of the set of acceptable inputs
+	• It is a good idea to design test cases before implementing a program
+
+4.7 Boolean Variables and Operators
+	• To store a condition that can be true or false, you use a Boolean variable
+		○ The Boolean type boolean has tw values, false and true
+		○ A boolean is also called a flag
+	• When you make complex decisions, you often need to combine Boolean values. An operator that combines Boolean conditions is called a Boolean operator
+		○ && -> and
+		○ || -> or
+	• To invert a condition, use the ! (not) operator
+
+4.8 Application: Input Validation
+	• An important application for the if statement is input validation. Whenever your program accepts user input, you need to make sure that the user-supplied values are valid before you use them in your computations
+	• Call the hasNextInt or hasNextDouble method to ensure that the next input is a number
