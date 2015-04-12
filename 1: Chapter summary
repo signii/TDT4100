@@ -1,0 +1,37 @@
+Chapter 1: Introduction
+Define "computer program" and programming
+	• Computers execute very basic instructions in rapid succession
+	• A computer program is a sequence of instructions and decisions
+	• Programming is the act of designing and implementing computer programs
+
+Describe the components of a computer
+	• The central processing unit (CPU) perfroms program control and data processing
+	• Storage devices include memory and secondary storage
+
+Describe the process of ranslating high-level languages to machine code
+	• Java was originally designed for programming consumer devices, but it was first successfully used to write Internet applets
+	• Java was designed to be safe and portable, benefiting both Internet users and students
+	• Java programs are distributed as instructions for virtual machine, making them platform-independent
+	• Java has a very large library. Focus on learning those parts of the library that you need for your programming projects
+
+Become familiar with your Java programming environment
+	• Set aside som time to become familiar with the programming environment that you will use for your class work
+	• An editor is a program for entering and modifying text, such as a Java program.
+	• Java is case sensitive. You must be careful about distinguishing between upper- and lowercase letters
+	• The Java compiler translates source code into class files that contain instructions for the Java virtual machine
+	• Develop a strategy for keeping backup copies of your work before disaster strikes
+
+Describe the building blocks of a simple program
+	• Classes are the fundamental building blocks of Java prgrams
+	• Every Java application contains a class with a main method. When the application starts, the instructions in the main method are executed
+	• Each class contains declarations of methods. Each method contains a sequence of instructions
+	• A method is called by specifying the method and its arguments
+	• A string is a sequence of characters enclosed in quotation marks
+
+Classify program errors as compile-time and run-time errors
+	• A compile-time error is a violation of the programming language rules that is detected by the compiler.
+	• A run-time error causes a program to take an action that the programmer did not intend
+
+Write pseudocode for simple algorithm
+	• An algorithm for solving a problem is a sequence of steps that is unambigous, executable, and terminating
+	• Pseudocode is an informal description of a sequence of steps for solving a problem
