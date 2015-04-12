@@ -1,0 +1,31 @@
+Chapter 3: Fundamental Data Types
+Choose appropriate types for representing numeric data
+	• Java has eight primitive types, including four integer types and two floating-point types
+	• A numeric computation overflows if the result falls outside the range for the number type
+	• Rounding eroors occur when an exact conversation between numbers is not possible
+	• A final variable is a constant. Once its value has been set, it cannot be changed
+	• Use named constants to make your programs easier to read and maintain
+
+Write arithmetic expressions in Java
+	• Mixing integers and floating-point values in an arithmetic expression yields a floating-point value
+	• The ++ operator adds 1 to a variable; the -- operator subtracts 1
+	• If both arguments of / are integers, the remainder is discarded
+	• The % operator computes the remainder of an integer division
+	• The Java library declares many mathematical functions, such as Math.sqrt(square root) and Math.pow(raising to a power)
+	• You use a cast (typeName) to convert a value to a different type
+
+Write programs that read user input and input and print formatted output
+	• Use the Scanner class to read the keyboard input in i console window
+	• Use the printf method to specify how values should be formatted
+
+Carry out hand calculations when developing an algorithm
+	• Pick concrete values for a typical situation to use in a hand calculation
+
+Write programs that process strings
+	• Strings are sequences of characters
+	• The length method yields the number of caharcters in a string
+	• Use the + operator to concatenate strings; this is, to put them together to yield a longer string
+	• Whenever one of the arguments of the + operator is a string, the other argument is converted to a string
+	• Use the next methid of the Scanner class to read a string containing a single word
+	• String positions are counted starting with 0
+	• Use the substring method to extract a part of a string
