@@ -1,0 +1,78 @@
+11.47
+
+1.1 Computer Programs
+	• Computers execute very basic instructions in rapid succession
+	• A computer program is a sequence of instructions and decisions
+	• The computer itself is a machine that stores data (numbers, words, pictures), interacts with devices (the monitor, the sound system, the printer), and executes programs
+
+1.2 The Anatomy of a Computer
+	• At the heart of the computer lies the central processing unit (CPU)
+		○ Transistors
+		○ Performs program control and data processing
+	• There are two kinds of storage
+		○ Primary storage or memory is made from electronic circuits that can store data, provided they are supplied with electric power
+		○ Secondary storage, usually a hard disk or a solid-state drive, provides slower and less expensive storage that persist without electricity
+			§ A hard disk consist of rotating platters, which are coated with a magnetic material
+
+1.3 The Java Programming Language
+	• A computer program consists of a large number of simple CPU instructions, and it is tedious and error-prone to specify them one by one.
+	• In high-level programming languages you specify the actions that your program should carry out
+	• A compiler translates the high-level instructions into the more detailed instructions (called machine code) required by the CPU
+	• Java was originally designes for programming consumer devices, but it was first successfully used to write internet applets
+		○ Java has a rich library that makes it possible to write portable programs that can bypass proprietary operating systems
+		○ Java was designed to be safe and portable, benefiting both Internet users and students
+		○ You can run a Java program in your browser
+		○ The same Java program will run, without change, on Windows, UNIX, Linux, or Machintosh.
+			§ Platform-indepentent
+
+1.4 Becoming Familiar with Your Programming Environment
+	• On many computers there is an integrated development environment in which you can write and test your prorgrams
+		○ On other computers you first launch an editor, a program that functions like a word processors
+	
+	Public class HelloPrinter
+	{
+		Public static void main(String[] args)
+		{
+			System.out.println("Hello, World!");
+			}
+		}
+	
+	>>>> Hello, World!
+	
+	• As you write this program, pay careful attention to the various symbols, and keep in mind that Java is case sensitive
+	• The Java compiler translates source code into class files that contain instructions for the Java virtual machine
+	• In order to run your program, the Java compiler translates your source files into class files
+		○ After the compiler has translated your source code into virtual machine instructions, the virtual machine executes them
+	• You store your programs in files. Files are stored in folders or directories
+
+1.5 Analyzing Your First Program
+	• The line public class HelloPrinterindicates the declaration of a class called HelloPrinter
+		○ The word public denotes that the class is usable by the "public"
+	•  Classes are the fundamental building blocks of Java programs
+	• The constructionpublic static void main(String[] args) {}declares a method called main
+	• Every Java application must have a main method
+	• The main methods contains one or more intstructions called statements.
+		○ Each statement ends in a semicolon ;
+	• A sequence of characters enclosed in quotation marks"Hello, World!"
+	Is called a string.
+		○ You must enclose the contents of the string inside the quotation marks so that the compiler knows you literally mean "Hello, World!"
+	• There is a method that you can use to print an item without starting a new line.System.out.print("00");System.out.println(3 + 4);
+	>>>> 007
+
+1.6 Errors
+	• A compile-time error is a violation of the programming language rulaes that is detected by the compiler
+		○ Syntax error
+	• A run-time error causes a program to take an action that the programmer did not intend.
+		○ Logic errors
+
+1.7 Problem Solving: Algorithm Design
+	• In order for a computer program to provide an answer to a problem that computes an answer, it must follow a sequence of steps that is
+		○ Unambigous
+		○ Executable
+		○ Terminating
+	• An algorithm for solving a problem is a sequence of steps that is unambigous executable, and terminating
+		○ The step sequence is unambigous when there are precise instructions for what to do at each step and where to go next
+		○ A step i executable when it can be carried out in practice
+		○ A sequence of steps is terminating if it will eventually come to an end
+	• There are no strict requirements for pseudocode because it is read by human readers, not a computer program
+		○ Pseudocode is an informal description of a sequence of steps for solving a problem
