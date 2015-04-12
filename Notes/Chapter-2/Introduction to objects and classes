@@ -1,0 +1,188 @@
+2.1 Objects and Classes
+	• In Java, you build programs from objects
+		○ Each object has a particular behavior, and you can manipulate it to achieve certain effects
+	• An object is an entity that you can manipulate by calling one or more of its methods
+		○ A method consists of a sequence of instructions that can access the internal data of an object
+	• A method is a sequence of instructions that access the data of an object
+	• A class describes a set of objects with the same behavior
+	• When your program manipulates objects, you will want to store the objects and the values that their methods return, so that ou can use them later.
+		○ In Java you use variables to store values
+		Int width = 20;
+	• A variable is a storage location in a computer program. 
+		○ Each variable has a name and holds a value
+		○ When declaring a variable, you usually specify an initial value
+		○ Wen declaring a variable, you also specify the type of its values
+	• The width variable is an integerint width =  20;
+		○ Use the int type for numbers that cannot have a fractional part
+	• In Java, there are several different types of numbers
+		○ Int is a whole number without a fractional part
+		○ Double is floating-point numbers
+	• You can combine numbers with the operators + - */%
+	• When you declare a variable, you should pick a name that explains its purpose
+		○ Names must start with a letter or the underscore (_) character
+		○ You cannot use other symbols such as ? or %
+		○ Names are case sensitive
+		○ You cannot use reserved words
+			§ Double
+			§ Class
+	• As your programs get more complex, you should add comments, axplanations for human readers of your code
+		○ //
+		○ /* */
+	• Use the assignment operator (=) to change the value of a variable
+		○ All variables must be initialized before you access them
+		○ The assignment operator = does not denote mathematical equality
+
+2.3 Working with Objects
+	• When you want to use objects in your program, you need to specifytheir initial properties by constructing them.
+		○ Use the new operator, followed by a class name and arguments, to construct new objects
+	• When a method is declared in a class, the declaration specifies the types of the arguments and the return value
+		○ A class declares two methods with the same name and different argument types
+		○ The println name is overloaded because it refers to more than one method.
+	• An accessor method does not change the internal data os the object on which it is invoked. A mutator method changes the data
+
+2.4 The API Documentation
+	• The API (Application Programming Interface) documentation lists the classes and methods of the Java library
+		○ The API documentation documents all classes in the Java library - there are thousands of them
+			§ Only a few are interesting to the beginning programmer
+	• The API documentation for each class starts out with a section that describes the purpose of the class
+	• Java classes are grouped into packages. 
+		○ A package is a collection of classes with a related purpose.
+		○ Use the import statement to use classes that are decklared in other packages
+		import java.awt.Rectangle;
+			§ import statements must be at the top of the source file
+			§ Package name
+			§ Class name
+	• You don't need to import the System and String classes because they are in the java.lang package, and all classes form this package are automatically imported, so you never need to import them yourself
+
+2.5 Instance Variables and Encapsulation
+	• Let's make a tally counter:
+		○ Whenever ther operator clicks the button of a tally counter, the counter value advances by one
+			§ A click method
+			§ A counter class
+		○ A physical counter has a display to show the current value
+			§ A getValue method:Counter tally = new Counter();tally.click();tally.click();
+	• An object stores it data in instance variables
+		○ An instance of a class is an object of the class.
+		○ An instance variable is a storage location that is present in each object of the class
+		public class Counter{
+			private int value;
+			...
+		}
+			§ Instance variables should always be private
+			§ Type of the variable
+			§ Each object of this class has a separate copy of this instance variable
+	• An object's instance variables store the data required for executing its methods
+	• An instance variable declaration consist of the following parts:
+		○ An access specifier (private)
+		○ The type of the instance variable (such as int)
+		○ The name of the instance variable (such as value)
+	• Each object of a class has its own set of instance variables
+	• The click methos advances the counter value by 1.public void click()
+	{           value = value + 1;
+	}
+	• The getValue method returns the current value:public int getValue(){       return value;}
+	• The return statement is a special statement that terminates the method call and returns a result to the method's calles
+	• Instance variables are generally declared with the access specifier private
+		○ That specifier means that they can be accessed only by the methods of the same class, not by any other method
+	• The strategy of information hiding is not unique to computer programming - it is used in many engineering desciplines
+		○ Engineers use the term black box to describe any device whose inner working are hidden
+	• The process of hiding implementation details whle publishing an interface is called encapsulation
+		○ Encapsultion is the process of hiding implementation details and providing methods for data access
+		○ Encapsulation allows a programmer to use a class without having to know its implementation
+		○ Encapsulation also helps detecting errors
+
+2.6 Specifying the Public Interface of a Class
+	• In order to implement a class, you first need to know which methods are required
+	• When you declare a mathod, you also need to provide the method body, which consists of statements that are executed when the method is called
+	• Constructors are used to to initialize objects
+		○ In Java a constructor is very smiliar to a method, with two important differences:
+			§ The name of the constructor is always the same as the name of the class
+			§ Constructors have no return type
+		○ A constructor that takes no arguments at all is called a no-argument constructor
+		○ The public constructors and methods of a class form the public interface of the class
+	• When you implement classes and methods, you should get into the habit of thoroughly commenting their behaviors
+		○ Documentation comments
+		○ /**
+		○ @param
+		○ @return
+	• According to the standard Java documentation style, every class, every method, every parameter variable, and every return value should have a comment
+
+2.7 Providing the Class Implementation
+	• The private implementation of a class consists of instance variables, and the bodies of constructors and methods
+	• A constructor has a simple job: to initialize the instance variables of an object
+		○ Create a new type
+		○ Call the second constructor
+		○ Set the parameter variabel
+		○ Set the instance variable of the newly created object
+		○ Store that object referenced in the variable
+	• When you implememnt constructors, be sure that each constructor initializes all instance variables, and that you make use of al parameter variables
+	• When you implement a method, ask yourself whether it is an accessor or mutator method
+		○ A mutator method needs to update the instance variables in some waypublic void deposit(double amount) {      balance = balance + amount}
+		○ An accessor method retrieves or computes a result
+	• You need local variables  to store intermediate values
+		○ You use local variables for temporary results that are only of interest within a single method call
+
+Implementing classes
+Example	Comments
+public class BankAccount {...}	This is the start of a class declaration. Instance variables, methods, and constructors are placed inside the braces.
+private double balance;	This is an instance variable of type double. Instance variables should be declared as private.
+public double getBalance() {...}	This is a method declaration. The body of the method must be placed inside the braces.
+... {return balance}	This is the body of the getBalance method. The return statement returns a value to the caller of the method.
+public void deposit(double amount) {...}	This is a method with a parameter variable(amount). Because the method is declared as void, it has no return value.
+... {balance = balance + amount; }	This is the body of the deposit method. It does not have a return statement.
+public BankAccount() {...}	This is a constructor declaration. A constructor has the same name as the class and no return type.
+...{balance = 0;}	This is the body of the constructor. A constructor should initialize the instance variables.
+	
+2.8 Unit Testing
+	• You can't execute a file without a main method
+	• Testing in isolation, outside a complete program, is called unit testing
+	• A tester class typically carries out the following steps:
+		○ Construct one or more objects of the class that is being tested
+		○ Invoke one or more methods
+		○ Print out one or more results
+		○ Print the expected results
+	• To produce a program, you need to combine the BankAccount and the BankAccountTester classes
+		○ In most environments, you need to carry out these steps:
+			§ Make a new subfolder for your program
+			§ Make two files, one for each class
+			§ Compile both files
+			§ Run the test program
+
+2.9 Object References
+	• An object variable (a variable whose type is a class) does not actually hold an object
+		○ It holds the memory location of an object
+	• When a variable contains the memory location of an object, we say that it refers to an object
+		○ It is very important that you remember that the box variable does not contain the object. It refers to the object.
+	• You can see the difference between number variables and object variables when you make a copy of a variable
+		○ When you copy a number, the original and the copy of the number are independent values
+		○ When you copy an object reference, both the original and the copy are references to the same object
+		○ The difference between objects and object references only becomes apparent when you have multiple variables that refer to the same object
+	• An objects reference can have the special value null if it refers to no object at all.
+		○ It is common to use the null value to indicate that a value has never been set
+		○ Note that the null reference is not the same as an empty rectangle
+		○ The null reference is the default value for an uninitialized instance variable. 
+	• When you call a mathod, you pass two kinds of inputs to the method
+		○ The object on which you invoke the method
+		○ The method arguments
+		momsSavings.deposit(500);
+	• The statement balance = balance + amount; actually means this.balance = this.balance + amount;
+	• Use of an instance variable name in a method denotes the instance variable of the implicit parameter
+		○ When you refer to an instance in a method, the compiler automatically applies it to the this reference
+	• The this reference denotes the implicit parameter
+		Public BankAccount(double initialBalance) {    this.balance = initialBalance;}
+	• A local variable shadows an instance variable with the same name. You can access the instance variable name through the this reference.
+	• A method call without an implicit parameter is applied to the same object
+
+2.10 Graphical Applications
+	• To show a frame, construct a JFrame object, set its size, and make it visible
+		○ Construct an object of the Jframe class: JFrame  frame = new Jframe();
+		○ Set the size of the frame:
+		Frame.setSize(300, 400);
+		○ If you'd like, set the title of the frame:frame.setTitle("An empty frame");
+		○ Set the "default close operation":frame.setDefaultCloseOperation(Jframe.EXIT_ON_CLOSE);
+		○ Make the frame visible:
+		frame.setVisible(true);
+	• You cannot draw directly into a frame. Instead, drawing happens in a component object.
+		○ In order to display a drawing in a frame, declare a class that extends the JComponent classpublic class RectangleComponent extends Jcomponent {      public void paintComponent(Graphics g) {           drawing instructions      }}
+	• Place drawing instructions inside the paintComponent method. That method is called whenever the component needs to be repainted
+	• The paintComponent  method recieves an object of type Graphics as its argument
