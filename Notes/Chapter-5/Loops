@@ -1,0 +1,95 @@
+5.1: The while Loop
+	• A loop executes instructions repeatedly while a condition is true
+	• In Java, the while statement implements such a repetition. It has the form
+		While (condition) {        statements}
+	• As long as the condition remains true, the statements inside the while statement are executed.
+		○ These statements are called the body of the while statements
+	• A while statement is an example of a loop.
+		○ When you declare a variable inside the loop body, the variable is created for each iteration of the loop and removed after the end of each iteration
+
+5.2: Problem Solving: Hand-Tracing
+	• When you hand-trace code or pseudocode, you write the names of the variables on a sheet of paper, mentally execute each step of the code, and update the variables
+		○ Whenever a variable changes, cross out the old value and write the new value below
+		○ When a program produces output, also write down the output in another column
+	• Hand-tracing can give you an insight that you would not get if you simply ran the code
+
+5.3: The for Loop
+	• The for loop is used when a value runs from a starting point with a constant increment or decrement
+	• Some people call this loop count-controlled. In contrast, the while loop of the preceding section can be called an event-controlled loop necause it executes until an event occurs; namely that the balance reaches the target
+		○ Definite
+			§ Count-controlled loop
+		○ Indefinite
+			§ You do not know how many iterations it takes to accumulate a target balance
+	• The for loop neatly groups the initialization, condition, and update expressions together
+
+5.4: The do Loop
+	• The do loop is appropriate when the loop body must be executed at least once
+		do{
+		      statements}
+		while (condition); 
+		○ The body of the do loop is executed first, then the condition is tested
+			§ Post-test loop
+			§ While and for loops are pre-test loops
+	• A typical example for a do loop is input validation
+
+5.5: Application: Processing Sentinel Values
+	• A sentinel value denotes the end of a data set, but it is not part of the data
+		○ A value which is not an actual input, but serves as a signal for termination, is called a sentinel
+	• You can use a Boolean variable to control a loop. Set the variable before entering the loop, then set it to the opposite to leave the loop
+
+5.6: Problem Solving: Storyboards
+	• Making a storyboard is very helpful when you begin designing a program
+		○ A storyboard consists of annotated sketches for each step in an action sequence
+	• Developing a storyboard helps you understand the inputs and outputs that are required for a program
+		○ It is a good idea to write the user inputs in a different color
+		○ How does the user quit the program?
+
+5.7: Common Loop Algorithms
+	• Sum and Average Value
+		○ Computing the sum of a number of inputs is a very common task
+		○ Keep a running total, a variable to which you add each input value
+			§ The total should be initialized with 0
+			§ The total variable is declared outside the loop
+		○ To compute an average, keep a total and a count of all values
+	• Counting Matches
+		○ You often want to know how many values fulfill a particular condition
+			§ You may want to count how many spaces are in a string
+			§ The variable is declared outside the loop
+				□ The xx variable is declared inside the loop, and we want that one to be updated
+	• Finding the First Match
+		○ If your goal is to find a match, exit the loop when the match is found
+			Boolean found = false;char ch = '?';
+			Int position = 0;
+			While (!found && position < str.length())
+			{
+			     ch = str.charAt(position);
+			     if (ch == ' ') { found = true; }
+			     else { position++;}
+			}
+			§ If a match was found, then found is true, ch is the first matching character, and position is the index of the first match
+			§ If the loop did not find a match, then found remains false after the end of the loop
+			§ The variable ch is declared outside the while loop because you may want to use the input after the loop has finished
+	• Prompting Until a Match is Found
+	• Maximum and Minimum
+		○ To compute the largest value in a sequence, keep a variable that stores the largest element that you have encountered, and update it when you find a larger one
+	• Comparing Adjacent Values
+		○ To compare adjacent inputs, store the preceding input in a variable
+		○ Initial input operation outside the loop
+
+5.8: Nested Loops
+	• When the body of a loop contains another loop, the loops are nested. A typical use of nested loops is printing a table with rows and columns
+		○ A loop inside another loop statement
+
+5.9: Application: Random Numbers and Simulations
+	• In a simulation you use the computer to simulate an activity
+	• A simulation program uses the computer to simulate an activity in the real world
+	• You can introduce randomness by calling the random number generator
+		○ The random class of the java library implements a random number generator that produces numbers that appear to be completely random
+	• The Monte Carlo Method is an ingenious method for finding approximate solutions to problems that cannot be precisely solved
+		○ It is difficult to compute the number pi, but you can approximte it quite well
+
+5.10: Using a Debugger
+	• A debugger is a program that you can use to execute another program and analyze its run-time behavior
+	• You can make effective use of a debugger by mastering just three concepts: breakpoints, singlestepping, and inspecting variables
+	• When a debugger executes a program, the execution is suspended whenever a breakpoint is reached
+	• The single-step command executes the program one line at a time
