@@ -1,0 +1,155 @@
+3.1 Numbers
+	• In Java, every value is either a reference to an object, or it belongs to one of the eight primitive types.
+	Type	Description	Size
+	int	The integer type, with range -2, 147,483,648 (Integer.MIN_VALUE)...2,147,483,647 (Integer.MAX_VALUE, about 2.14 billion)	4 bytes
+	byte	The type describing a single byte, with range -128...127	1 byte
+	short	The short integer type, with range -32,768...32,767	2 bytes
+	long	The long integer type, with range -9,223,372,036,854,775,808...9,223,372,036,854,775,807	8 bytes
+	double	The double-precision floating-point type, with a range of about +- 10^308 and about  15 significant decimal digits	8 bytes
+	float	The single-precision floating-point type, with a range of about +- 10^38 and about 7 significant decimal digits	4 bytes
+	char	The character type, representing code units in the Unicode encoding scheme 	2 bytes
+	boolean	The type with the two truth values false and true	1 bit
+	
+	• When a value such as 6 or 0.335 occurs in a Java program, it is called a number literal
+	Number	Type	Comment
+	6	int	An integer has no frectional part
+	-6	int	Integers can be negative
+	0	int	Zero is an integer
+	0.5	double	A number with a fractional part has type double
+	1.0	double	An integer with a fractional part .0 has type double
+	1E6	double	A number in exponential notation: 1 x 106 or 1000000. Numbers in exponential notation always have type double.
+	2.96E-2	double	Negative exponent: 2.96 x 10-2 = 2.96 / 100 = 0.0296
+	100,000		Error: Do not use a comma as a decimal separator
+	3 1/2		Error: Do not use fractions; use decimal notation: 3.5
+	
+	• A numeric computation overflows if the result falls outside the range for the number type
+	• Rounding errors occur when an exact representation of a floating-point number is not possible
+	• In many programs, you need to use numerical constants - values that do not change and that have a special significance for a computation
+	• In Java, constants are identified with the reserved word final
+	• In many programs, you need to use numerical constants - values that do not change and that have a special significance for a computation
+		payment = dollars + quarters * 0.25 + dimes * 0.1 + nickels * 0.05 + pennies * 0.01;
+		○ The four numeric quantities are included in the arithmetic expression without any explanation
+	• A final variable is a constant. Once its value has been set, it cannot be changed
+		○ Many programmers use all-uppercase names for constants (final variables), such as NICKEL_VALUE
+	• Use named constants to make your programs easier to read and maintain
+
+3.2 Arithmetic
+	• Java supports the same four basic arithmetic operations as a calculator, but it uses different symbols for the multiplication and division operators
+	• The combination of variables, literals, operators, and/or method call is called an expression
+		○ (a + b) / 2
+	• Mixing integers and floating-point values in an arithmetic expression yields a floating-point value.
+	• The ++ operator adds 1 to a variabl
+	• The -- operator subtracts 1
+	• Division works as long as at least one of the numbers involved is a floating-point number
+			§ 7.0 / 4.0 = 1.75
+		○ If both numbers are integers then the result of the integer division is always an integer, with the remainder discarded
+			§ 7 / 4 = 1
+	• If you are interester in the remainder only, use the % operator
+		○ 7 % 4 = 3
+		○ Modulus
+
+	Expression (where n = 1729) 	Value	Comment
+	n % 10	9	N % 10 is always the last digit of n
+	n / 10	172	This is always n without the last digit
+	n % 100	29	The last two digits of n
+	n / 10.0	172.9	Because 10.0 is a floating-point number, the fractional part is not discarded
+	-n % 10	-9	Because the first argument is negative, the remainder is also negative
+	n % 2	1	N % 2 is 0 if n is even, 1 or -1 if n is odd
+	
+	• In Java, there are no symbols for powers and roots. To compute them, you must call methods.
+		○ To take the square root of a number, you use the Math.sqrt method
+			§ Math.sqrt(x)
+			§ Math.pow(x, n)	Xn
+
+	Mathemathical Methods
+	Method	Returns
+	Math.sqrt(x)	Square root of x (>= 0)
+	Math.pow(x, y)	Xy (x > 0, or x = 0 and y > 0, or x < 0 and y is an integer)
+	Math.sin(x)	Sine of x (x in radians)
+	Math.cos(x)	Cosine of x
+	Math.tan(x)	Tangent of x
+	Math.round(x)	Closest integer to x (as long)
+	Math.ceil(x)	Smallest integer >= x (as a double)
+	Math.toRadians(x)	Convert x degrees to radians (i.e., returns x * 3,14/180)
+	Math.abs(x)	Absolute value |x|
+	Math.max(x, y)	The larger of x and y
+	Math.min(x, y)	The smaller of x and y
+	Math.exp(x)	ex
+	Math.log(x)	Natural log (ln(x), x > 0)
+	Math.log10(x)	Decimal log (log10(x), x > 0)
+	Math.floor(x)	Largest integer <= x (as a double)
+	Math.toDegrees(x)	Convert x radians to degrees (i.e., returns x * 180/3,14)
+	
+	• You must use the cast operator (int) to convert a floating-point value to an integer
+		double balance = total + tax;int dollars = (int) balance;
+		○ The cast (int) converts the floating-point value balance to an integer by discarding the fractional part
+
+3.2 Input and Output
+	• When a program asks for user input, it should first print a message that tells the user which input is expected. Such a message is called a prompt
+		System.out.print("Please enter the number of bottles: ");
+	• To read keyboard input, you use a class called scanner. You obtain a Scanner object by using the following statement:
+		Scanner in = new Scanner(System.in);
+		○ Once you have a scanner, you use its nextInt methid to read an integer value:
+			System.out.print("Please enter the number of bottles: ");int bottles = in.nextInt();
+		○ The Scanner class belongs to the package java.util. When using the Scanner class, import it by placing the following declaration at the top of your program file:
+			import java.util.Scanner;
+	• The following command displays the price with two digits after the decimal point:
+		System.out.printf("%.2f", price);
+
+	Format Specifier Examples
+	Format String	Sample Output	Comments
+	"%d"	24	Use d with an integer
+	"%5d"	24	Spaces are added so that the field width is 5
+	"Quantity:%5d"	Quantity:     24	Characters inside a format string but outside a format specifier appear in the output
+	"%f"	1.21997	Use f with a floating-point number
+	"%.2f"	1.22	Prints two digits after the decimal point
+	"%7.2f"	     1.22	Spaces are added so that the field width is 7
+	"%s"	Hello	Use s with a string
+	"%d %.2f"	24 1.22	You can format multiple values at once
+	
+3.4 Problem Solving: First Do it By Hand
+	• A very important step for developing an algorithm is to first carry out the computations by hand. 
+		○ Pick concrete values for a typical situation to use in a hand calculation
+
+3.5 Strings
+	• Text consists of characters: lettters, numbers, punctuation, spaces, and so on.
+	• A string is a sequence of characters
+	• We distinguish between string variables, and string literals.
+		○ A string literal denotes a particular string, just as a number literal denotes a particular number
+	• The number of characters in a string ig called the length of the string
+		int n = name.length();
+		○ A string of length 0 is called the empty string ("")
+	• Given two strings, such as "Harry" and "Morgan", you can concatenate them to one long string
+		○ In Java you use the +
+			String name = fName + lName;
+		○ Whenever one of the arguments of the + operator is a string, the other argument is convertes to a string
+	• Use the next method of the Scanner class to read a string containing a single word
+		System.out.print("Please enter your name: ");String name =  in.next();
+	• To include a quotation mark in a literal string, precede it with a backslahs, like this:"He said \"Hello\""
+		○ The sequence is called escape sequence
+	• Another common escape sequence is \n, which denotes a newline characterSystem.out.print("*\n**\n***\n");
+	• Strings are sequences of Unicode characters.
+		○ In Java, a character is a value of the type char
+		○ String positions are counted strarting with 0
+	• Use a substring method to extract a part of a string
+		str.substring(start, pastEnd)
+
+	String Operations
+	Statement	Result	Comment
+	String str = "Ja";str = str + "va";	Str is set to "Java"	When applied to strings, + denotes concatenation
+	System.out.println("Please" + " enter your name: ");	Prints Please enter your name:	Use concatenation to break up strings that don't fit into one line
+	Team = 49 + "ers"	Team is set to 49ers	Because "ers" is a string, 49 is converted to a string
+	String first = in.next();	First contains "Harry"	The next method places the next word into the string variable
+	String last = in.next();	Last contains "Morgan"
+	(User input: Harry Morgan)
+	String greeting = "H & S";	N is set to 5	Each space counts as one character
+	String str = "Sally";	Ch is set to 'a'	This is a char value, not a String. Note that the initial position is 0
+	Char ch = str.charAt(1);
+	String str = "Sally";	Str2 is set to "all"	Extracts the substring starting at position 1 and ending before position 4
+	String str2 = str.substring(1, 4);
+	String str = "Sally";	Str2 is set to "ally"	If you omit the en position, all characters from the position until the end of the string are included
+	String str2 = str.substring(1);
+	String str = "Sally";	Str2 is set to "a"	Extracts a string of length 1; contrast with str.charAt(1)
+	String str2 = str.substring(1, 2);
+	String last = str.substring(str.length() - 1);	Lat is set to the string containing the last character in str	The last character has position str.length() -1
+	
