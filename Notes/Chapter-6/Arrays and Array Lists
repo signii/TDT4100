@@ -1,0 +1,150 @@
+6.1 Arrays
+	• Arrays are the fundamental mechanismin Java for collecting multiple values
+	• An array collects a sequence of values of the same type
+	• In Java, an array is a much better choice for storing a sequence of values of the same type than a lot of variables
+		○ We can create an array that can hold ten values of type double:new double[10]
+			§ The number of elements (here, 10) is called the length of the array
+			§ The new operator constructs the array
+		○ You need to initialize the varialbe with the array:
+		double[] values = new double[10];
+			§ By default, each number in the array is 0
+			double[] moreValues = {32, 54, 67.5, 29, 35, 80, 115, 44.5, 100, 65};
+	• Individual elements in an array are accessed by an integer index i, using the notation array[i]
+	• An array element can be used like any variable
+	• To access a value in an array, you specify which "slot" you want to use
+	Values[4] = 35;
+		○ The slot number is called an index
+		○ Each slot in an array contains an element
+	• An array index must be at least zero and less than the size of the array
+		○ If values has ten elements, you are not allowed to access values[20]
+	• A bounds error, which occurs if you supply an invalid array index, can cause your program to terminate
+		○ When a bounds error occurs at run time, it causes a run-time, it causes a run-time exception
+
+Declaring arrays
+Int[] numbers = new int[10];	An array of ten integers. All elements are initialized with zero.
+Final int LENGTH = 10;	It is a good idea to use a named constant instead of a "magic number"
+Double[] data = new double[length];
+Int length = in.nextInt();	The length need not be a constant
+Double[] data = new double[length];
+Int[] squares = {0,1,4,9,16};	An array of five integers, with initial values
+String[] friends = {"Emily", "Bob", "Cindy"};	An array of three strings
+Double[] data = new int[10];	ERROR: You cannot innitialize a double[] variable with an array of type int[]
+
+	• Arrays suffer from a significant limitation: their length is fixed
+		○ Use the expression array.length to find the number of elements in an array
+	• An array reference specifies the location of an array. Copying the reference yields a second reference to the same array
+	• Arrays can occur as method arguments and return values
+	• An arrray cannot change size at run time
+		○ In a typical program run, only a part of the array will be occupied by actual elements
+		○ We call such an array a partially filled array
+		○ With a partially filled array, keep a companion variable for the current size
+
+6.2 Array Lists
+	• An array list stores a sequence of values whose size can change
+		○ Array lists can grow and shrink as needed
+		○ The ArrayList class supplies methods for common tasks, such as inserting and removing elements
+	• The ArrayList class is a generic class: ArrayList<Type> collects elements of the specified type
+	• The angle brackets around the String type tell you that String is a type parameter
+		○ ArrayList is called a generic class
+	• Use the size method to obtain the current size of an array list
+	• Use the get and set methods to access an array list element at a given index
+	• Use the add remove methods to add and remove array list elements
+	• In Java, you cannot directly insert orimitive type values - numbers, characters, or boolean values - into array lists. For example, you cannot form an ArrayList<double>. Instead you must use one of the wrapper classes shown in the following table
+	
+	Primitive Type	Wrapper Class
+	byte	Byte
+	boolean	Boolean
+	char	Character
+	double	Double
+	float	Float
+	int	Integer
+	long	Long
+	short	Short
+	
+	• To collect numbers in array lists, you must use wrapper classes
+	• Conversion between primitive types and the corresponding wrapper classes is automatic. This process is called auto-boxing (even though auto-wrapping would have been more consistent).
+
+Comparing Array and Array List Operations
+operation	Arrays	Array List
+Get an element	X = values[4];	X = values.get(4);
+Replace an element	Values[4] = 35;	Values.set(4, 35);
+Number of elements	Values.length	Values.size()
+Number of filled elements	CurrentSize	Values.size()
+Remove an element		Values.remove(4);
+Add an element, growing the collection		Values.add(35);
+Initializing a collection	Int[] values = {1, 4, 9};	
+
+	• For most programming tasks, array lists are easier to use than arrays
+		○ Array lists can grow and shrink
+		○ Arrays have nicer syntax for element access and initialization
+
+6.3 The Enhanced for Loop
+	• You can use the enhanced for loop to visit all elements of an array or array list
+	• Use the enhanced for loop if you do not need the index values in the loop body
+	• Note an important difference between the enhanced for loop and the basic for loop. In the enhanced for loop, the element variable is assigned values [0], values [1], and so on. In the basic for loop, the index variable i is assigned 0, 1, and so on.
+
+6.4 Array Algorithms
+	• If you use a partially filled array, remember to replace values.length or values.size() with the companion variable that represents the current size of the array
+	• Filling:for(int i = 0; i < values.length; i++) {      values[i] = i * i;}
+	• Sum and average value:double total =  0;for(double element : values) {    total = total + element;}double average =  0;if(values.length > 0) {average / values.length; }
+	• Maximum and minimum:
+	Double largest = values[0];for(int i = 1; i < values.length; i++) {    if(values[i] > largest)    {       largest = values[i];  }
+	}
+	• When separating elements, don't place a separator before the first element
+	For(int i = 0; i < values.length; i++) {    if(i > 0) {       system.out.print(" | ");    }   System.out.print(values[i];}
+	• You often need to search for the position of a specific element in an array so that you can replace or remove it.
+		○ A linear search inspects elements in sequence until a match is found
+	• In order to remove an element from an array list, you can simply call the remove method
+	• If the order of the elements does not matter, you can simply insert new elements at the end, incrementing the variable tracking the size
+	If(currentSize < values.length) {    currentSize++;    for (int i = currentSize - 1; i > pos; i--) {        values[i] = values[i-1];    }
+	   values[pos] = newElement;}
+		○ Before insering an element, move elements to the end of the array starting with the last one
+	• You often need to swap elements of an array
+		○ Use a temporary variable when swapping to elements
+	• It is easy to remove elements from an array list by calling the remove method
+		○ After you remove the element, the for loop increments i, skipping past the next element
+	• Array variables do not themselves hold array elements
+		○ Use the Arrays.copyOf method to copy the elements of an array into a new array
+
+6.5 Problem Solving: Adapting Algorithms
+	• By combining fundamental algorithms, you can solve complex programming tasks
+	• You should be familiar with the implementation of fundamental algorithms so that you can adopt them
+
+6.6 Problem Solving: Discovering Algorithms by Manipulating Physical Objects
+	• What do you do when none of the standard algorithms is sufficient for your task?
+		○ Manipulating phisical objects
+	• Consider that you are given an array whose size is an even number, and you are to switch the first and the second half
+		○ A loop is required
+		○ Elements should be inserted or swapped
+		○ One useful technique for discovering an algorithm is to manipulate physical objects
+
+6.7 Two-Dimensional Arrays
+	• It often happens that you want to store collections of values that have a two-dimensional layout
+		○ An arrangement consisting of rows and columns of values is called a two-dimensional array, or a matrix.
+	Country	Gold	Silver	Bronze
+	Canada	1	0	1
+	China	1	1	0
+	Germany	0	0	1
+	Korea	1	0	0
+	Japan	0	1	1
+	Russia	0	1	1
+	United States	1	1	0
+	
+	• New int[7][3] is an array with seven rows and three columns
+	Final int COUNTRIES = 7;
+	Final int MEDALS = 3;int[][] counts = new int[COUNTRIES][MEDALS];
+	Or
+	Int[][] counts = {   {1,0,1},
+	   {1,1,0},   {0,0,1},   {1,0,0},
+	   {0,1,1},
+	   {0,1,1},   {1,1,0}};
+		○ As with one-dimensional arrays, you cannot change the size of  two-dimensional array once it has been declared
+	• To access a particular element in the two-dimensional array, you need to specify two index values in separate brackets to select the row and column, respectively:
+	Int medalCount = counts[3][1];
+	• Some programs that work with two-dimensional arrays need to locate the elements that are adjacent to an element
+		○ The neighbours of counts[3][1] toe the left and right are counts[3][0] and counts[3][2]. The neighbours at top and bottom are counts[2][1] and counts[4][1]
+
+6.8 Regression Testing
+	• It is common and useful practice to make a new test whenever you find a program bug.
+		○ A test suite
+Regression testing involves repeating previously run tests to ensure that known failures of prior versions do not appear in new versions of the software
